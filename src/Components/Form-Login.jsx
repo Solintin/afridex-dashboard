@@ -23,7 +23,7 @@ export default function FormLogin() {
           </div>
         </div>
       
-          <div className="my-6 text-right font-bold text-xs text-red-400">  <a href="#"> Forgot Password? </a></div>
+          <div className="my-6 text-right font-bold text-xs text-red-400">  <a href="/"> Forgot Password? </a></div>
   
           <div className="w-full">
             <button className="w-full transition duration-300 hover:bg-afridex-core-hover hover:scale-110 p-3 text-base font-bold rounded-md text-center bg-afridex-core text-white">

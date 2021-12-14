@@ -56,7 +56,8 @@ export default function Dashboard() {
             return (
               <li
                 key={item + 1}
-                className={`flex text-base font-medium   rounded-lg p-2 ${ item.active ? 'bg-afridex-core text-white' : 'text-gray-500' }`}>
+                className={`flex text-base font-medium   rounded-lg p-2 ${ item.active ? 'bg-afridex-core text-white' : 'text-gray-500'}`}>
+                
                 <span>
                   <i className={`mr-3 ${item.icon}`}></i>
                 </span>
