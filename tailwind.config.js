@@ -3,9 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      fontFamily: {
-        serif: ["Red Hat Display", "sans-serif"],
-      },
+      // fontFamily: {
+      //   serif: ["Red Hat Display", "sans-serif"],
+      // },
       spacing: {
         "22px": "22px",
         "10px": "10px",
@@ -47,8 +47,7 @@ module.exports = {
         "106px": "106px",
       },
       colors: {
-        sidebar: "#050917",
-        "afridex-orange": "#FF9A51",
+        "afridex-core": "#0F92BF",
         "afridex-orange-400": "#FFC093",
         "afridex-orange-900": "#FF592C",
         "afridex-orange-100": "#fbf5f3",
