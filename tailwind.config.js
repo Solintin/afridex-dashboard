@@ -24,7 +24,7 @@ module.exports = {
         "56px": "56px",
         "60px": "60px",
         "64px": "64px",
-
+        "224px" :"224px",
         136: "136px",
         32: "32px",
         160: "160px",
@@ -45,10 +45,14 @@ module.exports = {
         128: "128px",
         "103px": "103px",
         "106px": "106px",
+        "30pct" : "30%",
+        "25pct" : "25%"
       },
       colors: {
         "afridex-core": "#0F92BF",
-        "afridex-orange-400": "#FFC093",
+        "afridex-core-hover": "#077fa8",
+        "afridex-gray": "#777E90",
+        "afridex-neutral": "#F4F5F6",
         "afridex-orange-900": "#FF592C",
         "afridex-orange-100": "#fbf5f3",
         "afridex-black-100": "#040415",

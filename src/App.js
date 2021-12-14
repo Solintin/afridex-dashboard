@@ -1,10 +1,16 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Signup from "./Pages/signup";
+import Login from "./Pages/login";
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl text-center text-red-500 font-bold underline">
-        Afridexg Personal Dashboard
-      </h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="signup/*" element={<Signup />} />
+          <Route path="login/*" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 export default App;
