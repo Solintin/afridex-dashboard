@@ -46,7 +46,9 @@ module.exports = {
         "103px": "103px",
         "106px": "106px",
         "30pct" : "30%",
-        "25pct" : "25%"
+        "25pct" : "25%",
+        "420px" : "420px",
+        "280px" : "280px"
       },
       colors: {
         "afridex-core": "#0F92BF",

@@ -16,7 +16,7 @@ function signup() {
             Got an account?
           </span>
           <span className="text-afridex-core">
-            <a href="/"> sign in into your accout</a>
+            <a href="/login"> sign in into your accout</a>
           </span>
         </div>
         <div className=" flex flex-col mx-auto justify-center  max-w-md ">
