@@ -79,7 +79,7 @@ const DashboardContent = (props) => {
           <div className="font-thin text-gray-500 text-xs">
             Lets you buy, sell, store and trade BTC
           </div>
-          <button className="px-10 mx-auto transition duration-300 hover:bg-afridex-core-hover  p-1 text-sm font-bold rounded-md text-center bg-afridex-core text-white">
+          <button className="w-full   text-center  transition duration-300 hover:bg-afridex-core-hover  p-1 text-sm font-bold rounded-md bg-afridex-core text-white">
             Buy USDT
           </button>
         </div>
@@ -92,7 +92,7 @@ const DashboardContent = (props) => {
           <div className="font-thin text-gray-500 text-xs">
             Initiate a quick fund transfer to your bank
           </div>
-          <button className="px-10 mx-auto transition duration-300 hover:bg-green-500  p-1 text-sm font-bold rounded-md text-center bg-green-400 text-white">
+          <button className="w-full transition duration-300 hover:bg-green-500  p-1 text-sm font-bold rounded-md text-center bg-green-400 text-white">
             Transfer
           </button>
         </div>
@@ -105,7 +105,7 @@ const DashboardContent = (props) => {
           <div className="font-thin text-gray-500 text-xs">
             Lets you buy, sell, store and trade BTC
           </div>
-          <button className="px-10 mx-auto transition duration-300 hover:bg-blue-500  p-1 text-sm font-bold rounded-md text-center bg-blue-700 text-white">
+          <button className="w-full transition duration-300 hover:bg-blue-500  p-1 text-sm font-bold rounded-md text-center bg-blue-700 text-white">
             Buy USDT
           </button>
         </div>

@@ -1,14 +1,17 @@
 import signLogo from "../assets/images/afridex_left_signup.png";
-import Form from '../Components/form'
+import Form from "../Components/form";
+import { Link } from "react-router-dom";
 function signup() {
   return (
     <div className="flex  w-full h-full">
       <div className="w-3/12 fixed">
-        <img
-          src={signLogo}
-          alt="afridex_left_signup"
-          className=" h-screen w-full"
-        />
+        <a href="/">
+          <img
+            src={signLogo}
+            alt="afridex_left_signup"
+            className=" h-screen w-full"
+          />
+        </a>
       </div>
       <div className="ml-25pct w-9/12">
         <div className="p-80px text-right">
@@ -27,7 +30,6 @@ function signup() {
             Please ensure you are visiting the correct url.
           </span>
           <div className="mb-8  py-2 mx-10  text-center bg-afridex-neutral rounded-3xl font-bold flex  justify-center">
-           
             <span>
               <svg
                 width="24"
@@ -60,8 +62,7 @@ function signup() {
             accounts.afridex.com/signup
           </div>
 
-        <Form />
-          
+          <Form />
         </div>
       </div>
     </div>
