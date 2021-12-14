@@ -1,6 +1,5 @@
 import signLogo from "../assets/images/afridex_left_signup.png";
 import Form from "../Components/form";
-import { Link } from "react-router-dom";
 function signup() {
   return (
     <div className="flex  w-full h-full">
