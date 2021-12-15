@@ -48,7 +48,7 @@ export default function Dashboard() {
           <input
             type="text"
             placeholder="Search.."
-            className="absolute border-2 pl-8  pr-3 py-2 mt-14 border-afridex-neutral overflow-hidden overflow-ellipsis rounded-xl flex-1 outline-none focus:border-afridex-core"
+            className="absolute w-full border-2 pl-8  pr-3 py-2 mt-14 border-afridex-neutral overflow-hidden overflow-ellipsis rounded-xl flex-1 outline-none focus:border-afridex-core"
           />
         </div>
         <div className="pt-12 space-y-7  ">

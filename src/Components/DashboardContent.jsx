@@ -1,6 +1,6 @@
 import BoltIcon from "@mui/icons-material/Bolt";
 import afridex_coin from "../assets/images/afridex_coin.svg";
-import wallet from "../assets/images/Wallet.svg";
+import wallet from "../assets/images/Wallet.png";
 import transfer from "../assets/images/transfer.svg";
 import buy from "../assets/images/buy.svg";
  import BasicTable from '../Components/Table'
@@ -111,7 +111,7 @@ const DashboardContent = (props) => {
         </div>
       </div>
 
-      <div className=" mb-9 flex justify-between items-center">
+      <div className=" mb-5 flex justify-between items-center">
         <div className="font-bold text-lg">Transaction History</div>
         <div className="flex text-sm font-medium items-center space-x-3">
           <div className="bg-white rounded-md  border border-afridex-neutral p-2 flex items-center ">

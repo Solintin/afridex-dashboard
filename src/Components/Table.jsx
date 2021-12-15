@@ -1,56 +1,103 @@
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
+import afridex_coin from "../assets/images/afridex_coin.svg";
 export default function BasicTable() {
-  return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
+
+
+
+  return <>
+  
+
+
+
+
+
+
+
+  <div className='table-section mt-10 lg:mt-10 rounded-2xl bg-white shadow-2xl py-3 lg:py-4'>
+    
+
+      <div className='table-wrapper mt-5 w-full overflow-x-scroll lg:overflow-x-hidden pb-6'>
+        <table className='w-full items-center table-auto'>
+          <thead>
+          <tr className='border-b border-gray-200 font-bold text-xs text-gray-400 leading-5'>
+           
+            <th className='p-3 '>
+           Coin
+            </th>
+            <th className='p-3 '>
+              Transaction ID
+            </th>
+            <th className='p-3 '>
+           Amount
+            </th>
+            <th className='p-3 '>
+              Date
+            </th>
+            <th className='p-3 '>
+             Categories
+            </th>
+            <th className='px-3'>
+              Fees
+            </th>
+           
+          </tr>
+          </thead>
+          <tbody className=''>
+       
+          {
+            [...Array(10)].map( (i, idx) =>{
+              return (
+                <tr key={idx} className='border-b border-gray-200 py-3 cursor-pointer odd:bg-gray-100s'>
+          
+                <td className=' px-3 whitespace-nowrap pr-6'>
+                  <div className='flex justify-center items-center space-x-4'>
+                    <img className='rounded-full w-36px h-36px' src={afridex_coin } alt=''/>
+                    <div className='name'>
+                    USDC
+                    </div>
+                  </div>
+                </td>
+                <td className='text-sm px-3 leading-5 text-center whitespace-nowrap text-afridex-core font-medium'>
+                2716w821
+                </td>
+                <td className='text-sm px-3 leading-5 text-center whitespace-nowrap text-black font-medium'>
+                $100,000
+                </td>
+                <td className='text-sm px-3 leading-5 text-center whitespace-nowrap text-black font-medium'>
+                 <span className="mr-2">10/10/2021 </span>  <span>10:09pm
+                 </span>                </td>
+                <td className='text-sm px-3 leading-5 text-center whitespace-nowrap text-black font-medium'>
+                
+                  <div className="bg-blue-100 rounded-xl py-1 flex justify-center items-center">
+                  <div className="h-2 w-2 bg-blue-500 rounded-full mr-2"></div>
+                  <span className="font-bold text-xs text-blue-500">USDT Purchase</span>
+                  </div>
+
+                </td>
+                <td className='text-sm px-3 flex justify-center items-center whitespace-nowrap leading-5  text-afridex font-medium'>
+                <div className='rounded-full text-center mb-3 px-4   py-2'>
+                $0.5
+                </div>
+                </td>
+    
+              
+    
+    
+              </tr>
+              )
+            })
+          }
+          </tbody>
+        </table>
+
+        <div className='see-more flex justify-center items-center mt-6'>
+          <a href='/' className='text-center mx-auto text-gray-700  font-bold underline text-sm leading-5'>See All Users</a></div>
+      </div>
+    </div>
+
+
+
+
+
+
+  </>;
 }
