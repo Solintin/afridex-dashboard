@@ -55,6 +55,7 @@ module.exports = {
         "afridex-core": "#0F92BF",
         "afridex-core-hover": "#077fa8",
         "afridex-gray": "#777E90",
+        "afridex-gray-400": "#4F4F4F",
         "afridex-neutral": "#F4F5F6",
         "afridex-orange-900": "#F2994A",
         "afridex-orange-100": "#FFF5EF",

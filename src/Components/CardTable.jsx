@@ -6,7 +6,7 @@ export default function BasicTable() {
         <div className="table-wrapper  w-full overflow-x-scroll lg:overflow-x-hidden pb-6">
           <div className="flex my-2 justify-between px-5">
             <div className="rounded-md px-2 border border-afridex-neutral text-gray-700 flex">
-              <button className="border-r border-gray-300x bg-gray-200 pr-2 ">
+              <button className="border-r border-gray-300x  pr-2 ">
                 All Card
               </button>
               <button className="border-r border-gray-300 px-2 ">

@@ -5,9 +5,30 @@ import transfer from "../../assets/images/transfer.svg";
 import buy from "../../assets/images/buy.svg";
  import BasicTable from '../Table'
 
-const DashboardContent = (props) => {
+ import DepositDialog from "../Modals/Deposit"
+ import BuyUsdt from "../Modals/BuyUsdt"
+import { useState } from "react";
 
-   
+const DashboardContent = () => {
+
+  //  const [openModal, setOpenModal] = useState(false)
+   const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+   const [openUsdt, setOpenUsdt] = useState(false);
+
+  const handleClickOpenUsdt = () => {
+    setOpenUsdt(true);
+  };
+  const handleCloseUsdt = () => {
+    setOpenUsdt(false);
+  };
+
 
   return (
     <section className="max-w-6xl">
@@ -83,7 +104,7 @@ const DashboardContent = (props) => {
           <div className="font-thin text-gray-500 text-xs">
             Lets you buy, sell, store and trade BTC
           </div>
-          <button className="w-full   text-center  transition duration-300 hover:bg-afridex-core-hover  p-1 text-sm font-bold rounded-md bg-afridex-core text-white">
+          <button onClick={handleClickOpenUsdt} className="w-8/12   text-center  transition duration-300 hover:bg-afridex-core-hover  p-1 text-sm font-bold rounded-md bg-afridex-core text-white">
             Buy USDT
           </button>
         </div>
@@ -96,7 +117,7 @@ const DashboardContent = (props) => {
           <div className="font-thin text-gray-500 text-xs">
             Initiate a quick fund transfer to your bank
           </div>
-          <button className="w-full transition duration-300 hover:bg-green-500  p-1 text-sm font-bold rounded-md text-center bg-green-400 text-white">
+          <button className="w-8/12 transition duration-300 hover:bg-green-500  p-1 text-sm font-bold rounded-md text-center bg-green-400 text-white">
             Transfer
           </button>
         </div>
@@ -109,12 +130,17 @@ const DashboardContent = (props) => {
           <div className="font-thin text-gray-500 text-xs">
             Lets you buy, sell, store and trade BTC
           </div>
-          <button className="w-full transition duration-300 hover:bg-blue-500  p-1 text-sm font-bold rounded-md text-center bg-blue-700 text-white">
-            Buy USDT
+          <button onClick={handleClickOpen} className="w-8/12 transition duration-300 hover:bg-blue-500  p-1 text-sm font-bold rounded-md text-center bg-blue-700 text-white">
+            Deposit USDT
           </button>
         </div>
       </div>
 
+      <DepositDialog open={open} 
+      handleClose={handleClose} />
+      <BuyUsdt open={openUsdt} 
+      handleClose={handleCloseUsdt}
+      />
       <div className=" mb-5 flex justify-between items-center">
         <div className="font-bold text-lg">Transaction History</div>
         <div className="flex text-sm font-medium items-center space-x-3">
