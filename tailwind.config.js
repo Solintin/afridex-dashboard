@@ -48,7 +48,8 @@ module.exports = {
         "30pct" : "30%",
         "25pct" : "25%",
         "420px" : "420px",
-        "280px" : "280px"
+        "280px" : "280px",
+        "1440px" : "8xl"
       },
       colors: {
         "afridex-core": "#0F92BF",
@@ -130,6 +131,10 @@ module.exports = {
         "19rem": "19rem",
         "32rem": "32rem",
         "35rem": "35rem",
+        "1440px" : "8xl",
+        "420px" : "420px",
+        "300px" : "350px",
+
       },
       boxShadow: {
         "afridex-bs": "0px 5px 10px rgba(15, 15, 15, 0.02)",

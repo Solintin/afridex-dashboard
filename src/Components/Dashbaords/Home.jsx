@@ -1,12 +1,16 @@
 import BoltIcon from "@mui/icons-material/Bolt";
-import afridex_coin from "../assets/images/afridex_coin.svg";
-import wallet from "../assets/images/Wallet.png";
-import transfer from "../assets/images/transfer.svg";
-import buy from "../assets/images/buy.svg";
- import BasicTable from '../Components/Table'
+import afridex_coin from "../../assets/images/afridex_coin.svg";
+import wallet from "../../assets/images/Wallet.png";
+import transfer from "../../assets/images/transfer.svg";
+import buy from "../../assets/images/buy.svg";
+ import BasicTable from '../Table'
+
 const DashboardContent = (props) => {
+
+   
+
   return (
-    <>
+    <section className="max-w-6xl">
       <div className=" mb-9 flex justify-between items-center">
         <div className="font-bold text-lg" >Home</div>
         <div className="flex items-center">
@@ -14,7 +18,7 @@ const DashboardContent = (props) => {
             <span className="mr-2">
               <BoltIcon className="hover:text-white transition duration-300"></BoltIcon>
             </span>
-            Transfer Money
+            <span>Transfer</span>
           </button>
           <div className="bg-white rounded-md h-10 w-10 ml-2 mr-1 grid place-content-center">
             <i className="fa fa-cog text-afridex-gray  hover:text-black transition duration-300"></i>
@@ -156,7 +160,7 @@ const DashboardContent = (props) => {
       </div>
 
       <BasicTable />
-    </>
+    </section>
   );
 };
 

@@ -12,30 +12,30 @@ export default function BasicTable() {
 
 
 
-  <div className='table-section mt-10 lg:mt-10 rounded-2xl bg-white shadow-2xl py-3 lg:py-4'>
+  <div className='table-section max-w-6xl mt-10 lg:mt-10 rounded-2xl bg-white shadow-2xl py-2'>
     
 
-      <div className='table-wrapper mt-5 w-full overflow-x-scroll lg:overflow-x-hidden pb-6'>
+      <div className='table-wrapper  w-full overflow-x-scroll lg:overflow-x-hidden pb-6'>
         <table className='w-full items-center table-auto'>
           <thead>
           <tr className='border-b border-gray-200 font-bold text-xs text-gray-400 leading-5'>
            
-            <th className='p-3 '>
+            <th className='py-3 '>
            Coin
             </th>
-            <th className='p-3 '>
+            <th className='py-3 '>
               Transaction ID
             </th>
-            <th className='p-3 '>
+            <th className='py-3 '>
            Amount
             </th>
-            <th className='p-3 '>
+            <th className='py-3 '>
               Date
             </th>
-            <th className='p-3 '>
+            <th className='py-3 '>
              Categories
             </th>
-            <th className='px-3'>
+            <th className='py-3'>
               Fees
             </th>
            
@@ -90,7 +90,7 @@ export default function BasicTable() {
         </table>
 
         <div className='see-more flex justify-center items-center mt-6'>
-          <a href='/' className='text-center mx-auto text-gray-700  font-bold underline text-sm leading-5'>See All Users</a></div>
+          <a href='/' className='text-center mx-auto text-gray-700  font-bold underline text-sm leading-5'>See All Transactions</a></div>
       </div>
     </div>
 

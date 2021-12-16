@@ -1,40 +1,52 @@
 import "../assets/styles/dashboard.css";
 import afridex_logo from "../assets/images/afridex_logo.svg";
-import { Link } from "react-router-dom";
-import DashboardContent from "../Components/DashboardContent";
-export default function Dashboard() {
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import DashboardHome from "../Components/Dashbaords/Home";
+import Transactions  from "../Components/Dashbaords/Transactions";
+import Cards  from "../Components/Dashbaords/Cards";
+import Referral  from "../Components/Dashbaords/Referral";
+export default function Dashboard(prop) {
   const sidebarContent = [
     {
-        active : true,
-      link: "#",
+      active: true,
+      link: "/dashboard/home",
       icon: "fa fa-home-lg-alt",
       title: "Home",
     },
     {
-        active : false,
-      link: "#",
+      active: false,
+      link: "/dashboard/transactions",
       icon: "fa fa-chart-bar",
-      title: "Transaction",
+      title: "Transactions",
     },
     {
-        active : false,
-      link: "#",
+      active: false,
+      link: "/dashboard/card",
       icon: "fa fa-credit-card",
       title: "Card",
     },
     {
-        active : false,
-      link: "#",
+      active: false,
+      link: "/dashboard/referral",
       icon: "fa fa-layer-group",
       title: "Referral",
     },
     {
-        active : false,
-      link: "#",
+      active: false,
+      link: "/dashboard/settings",
       icon: "fa fa-cog",
       title: "Settings",
     },
   ];
+  const pathname = window.location.pathname;
+
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      navigate("/dashboard/home");
+    }
+  });
   return (
     <div className="dashboard-container flex">
       <div className="w-280px fixed h-screen bg-white space-y-4 flex flex-col p-5">
@@ -52,16 +64,24 @@ export default function Dashboard() {
           />
         </div>
         <div className="pt-12 space-y-7  ">
-          {sidebarContent.map((item) => {
+          {sidebarContent.map((item, idx) => {
             return (
               <li
-                key={item + 1}
-                className={`flex text-base font-medium   rounded-lg p-2 ${ item.active ? 'bg-afridex-core text-white' : 'text-gray-500'}`}>
-                
+                key={idx}
+                className={`flex text-base font-medium   rounded-lg p-2 ${
+                  pathname === item.link
+                    ? "bg-afridex-core text-white"
+                    : "text-gray-500"
+                }`}
+              >
                 <span>
                   <i className={`mr-3 ${item.icon}`}></i>
                 </span>
-                <span className={` flex items-center ${ item.active ? 'text-white' : 'text-gray-500'} `}>
+                <span
+                  className={` flex items-center ${
+                    pathname === item.link ? "text-white" : "text-gray-500"
+                  } `}
+                >
                   <Link to={item.link}> {item.title} </Link>
                 </span>
               </li>
@@ -70,7 +90,12 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="ml-280px p-30px w-full">
-        <DashboardContent />
+        <Routes>
+          <Route path="/dashboard/home" element={<DashboardHome />} />
+          <Route path="/dashboard/transactions" element={<Transactions />} />
+          <Route path="/dashboard/card" element={<Cards />} />
+          <Route path="/dashboard/referral" element={<Referral />} />
+        </Routes>
       </div>
     </div>
   );
