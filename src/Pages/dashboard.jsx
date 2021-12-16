@@ -6,6 +6,7 @@ import DashboardHome from "../Components/Dashbaords/Home";
 import Transactions  from "../Components/Dashbaords/Transactions";
 import Cards  from "../Components/Dashbaords/Cards";
 import Referral  from "../Components/Dashbaords/Referral";
+import Settings  from "../Components/Dashbaords/Settings";
 export default function Dashboard(prop) {
   const sidebarContent = [
     {
@@ -95,6 +96,7 @@ export default function Dashboard(prop) {
           <Route path="/dashboard/transactions" element={<Transactions />} />
           <Route path="/dashboard/card" element={<Cards />} />
           <Route path="/dashboard/referral" element={<Referral />} />
+          <Route path="/dashboard/Settings" element={<Settings />} />
         </Routes>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import signLogo from "../assets/images/afridex_left_signup.png";
-import Form from "./form";
+import Form from "./Form-Signup";
 function Signup() {
   return (
     <div className="flex  w-full h-full">
