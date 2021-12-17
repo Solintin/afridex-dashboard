@@ -3,38 +3,34 @@ import afridex_logo from "../assets/images/afridex_logo.svg";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import DashboardHome from "../Components/Dashbaords/Home";
-import Transactions  from "../Components/Dashbaords/Transactions";
-import Cards  from "../Components/Dashbaords/Cards";
-import Referral  from "../Components/Dashbaords/Referral";
-import Settings  from "../Components/Dashbaords/Settings";
-export default function Dashboard(prop) {
+import Transactions from "../Components/Dashbaords/Transactions";
+import TransactionDetails from "../Components/Dashbaords/TransactionDetails";
+import Cards from "../Components/Dashbaords/Cards";
+import Referral from "../Components/Dashbaords/Referral";
+import Settings from "../Components/Dashbaords/Settings";
+export default function Dashboard() {
   const sidebarContent = [
     {
-      active: true,
       link: "/dashboard/home",
       icon: "fa fa-home-lg-alt",
       title: "Home",
     },
     {
-      active: false,
       link: "/dashboard/transactions",
       icon: "fa fa-chart-bar",
       title: "Transactions",
     },
     {
-      active: false,
       link: "/dashboard/card",
       icon: "fa fa-credit-card",
       title: "Card",
     },
     {
-      active: false,
       link: "/dashboard/referral",
       icon: "fa fa-layer-group",
       title: "Referral",
     },
     {
-      active: false,
       link: "/dashboard/settings",
       icon: "fa fa-cog",
       title: "Settings",
@@ -52,7 +48,9 @@ export default function Dashboard(prop) {
     <div className="dashboard-container flex">
       <div className="w-280px fixed h-screen bg-white space-y-4 flex flex-col p-5">
         <div>
-          <img src={afridex_logo} alt="logo" className="" />
+          <Link to="/">
+            <img src={afridex_logo} alt="logo" className="" />
+          </Link>
         </div>
         <div className="w-full   relative flex items-center">
           <div>
@@ -70,7 +68,7 @@ export default function Dashboard(prop) {
               <li
                 key={idx}
                 className={`flex text-base font-medium   rounded-lg p-2 ${
-                  pathname === item.link
+                  pathname.includes(item.link)
                     ? "bg-afridex-core text-white"
                     : "text-gray-500"
                 }`}
@@ -80,7 +78,9 @@ export default function Dashboard(prop) {
                 </span>
                 <span
                   className={` flex items-center ${
-                    pathname === item.link ? "text-white" : "text-gray-500"
+                    pathname.includes(item.link)
+                      ? "text-white"
+                      : "text-gray-500"
                   } `}
                 >
                   <Link to={item.link}> {item.title} </Link>
@@ -93,7 +93,10 @@ export default function Dashboard(prop) {
       <div className="ml-280px p-30px w-full">
         <Routes>
           <Route path="/dashboard/home" element={<DashboardHome />} />
-          <Route path="/dashboard/transactions" element={<Transactions />} />
+          <Route path="/dashboard/transactions/" element={<Transactions />} />
+
+          <Route  path="/dashboard/transactions/details/" element={<TransactionDetails />} />
+
           <Route path="/dashboard/card" element={<Cards />} />
           <Route path="/dashboard/referral" element={<Referral />} />
           <Route path="/dashboard/Settings" element={<Settings />} />

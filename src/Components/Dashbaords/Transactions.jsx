@@ -1,18 +1,16 @@
 import BasicTable from "../Table";
 
 const Transactions = () => {
- 
-
   return (
     <section className="max-w-6xl">
       <div className=" mb-9 flex justify-between items-center">
         <div className="font-bold text-lg">Transactions</div>
         <div className="flex items-center">
-        <select name="" id="" className="bg-transparent outline-none">
-        <option value="usd">$USD</option>
-        <option value="usd">#NGN</option>
-        <option value="usd">%YEN</option>
-        </select>
+          <select name="" id="" className="bg-transparent outline-none">
+            <option value="usd">$USD</option>
+            <option value="usd">#NGN</option>
+            <option value="usd">%YEN</option>
+          </select>
           <div className="bg-white rounded-md h-10 w-10 ml-2 mr-1 grid place-content-center">
             <i className="fa fa-cog text-afridex-gray  hover:text-black transition duration-300"></i>
           </div>
@@ -31,27 +29,21 @@ const Transactions = () => {
             Total Transactions
           </div>
 
-          <div className="font-semibold text-3xl ">
-          $120,280
-          </div>
+          <div className="font-semibold text-3xl ">$120,280</div>
         </div>
         <div className="rounded-md  shadow-md space-y-5 transform duration-200 hover:-translate-y-2 bg-white flex-col p-3">
           <div className="font-medium text-base text-gray-500">
             Total Wallet Funding
           </div>
 
-          <div className="font-semibold text-3xl ">
-          $120,280
-          </div>
+          <div className="font-semibold text-3xl ">$120,280</div>
         </div>
         <div className="rounded-md  shadow-md space-y-5 transform duration-200 hover:-translate-y-2 bg-white flex-col p-3">
           <div className="font-medium text-base text-gray-500">
             Total Withdrawals
           </div>
 
-          <div className="font-semibold text-3xl ">
-          $90,280
-          </div>
+          <div className="font-semibold text-3xl ">$90,280</div>
         </div>
       </div>
 
@@ -100,6 +92,7 @@ const Transactions = () => {
       </div>
 
       <BasicTable />
+
     </section>
   );
 };

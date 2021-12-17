@@ -30,8 +30,8 @@ export default function BasicTable() {
                       <span className="mr-2">10/10/2021 </span>{" "}
                       <span>10:09pm</span>{" "}
                     </td>
-                    <td className="text-sm px-3 leading-5 text-center whitespace-nowrap text-black font-medium">
-                      <div className="bg-afridex-orange-100 rounded-xl py-1 flex justify-center items-center">
+                    <td className="text-sm px-3 leading-5 text-center whitespace-nowrap  text-black font-medium">
+                      <div className="bg-afridex-orange-100   rounded-xl py-1 flex justify-center items-center">
                         <div className="h-2 w-2 bg-afridex-orange-900 rounded-full mr-2"></div>
                         <span className="font-bold text-xs text-afridex-orange-900">
                           Pending
