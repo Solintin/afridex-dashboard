@@ -65,7 +65,7 @@ module.exports = {
         "afridex-black-400": "#23262F",
         "afridex-green": "#4B9F47",
         "afridex-green-deep": "#089E68",
-        "afridex-blue": "#2772F0",
+        "afridex-blue-100": "#E7F4F9",
         "afridex-dark-blue": "#091231",
         "afridex-blue-500": "#2F80ED",
         "afridex-icon-gray": "#828282",

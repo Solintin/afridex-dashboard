@@ -44,17 +44,8 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs({ open, handleClose }) {
-  //   const [open, setOpen] = React.useState(false);
-
-  //   const handleClickOpen = () => {
-  //     setOpen(true);
-  //   };
-  //   const handleClose = () => {
-  //     setOpen(false);
-  //   };
-
-   return (
+export default function CustomizedDialogs({ open, handleClose, response }) {
+  return (
     <div>
       <BootstrapDialog
         onClose={handleClose}
@@ -64,40 +55,25 @@ export default function CustomizedDialogs({ open, handleClose }) {
         <BootstrapDialogTitle
           id="customized-dialog-title"
           onClose={handleClose}
-
-
-        ><h1>Done</h1></BootstrapDialogTitle>
+        >
+          <h1>Done</h1>
+        </BootstrapDialogTitle>
         <DialogContent dividers>
           <div className="p-4">
             <h1 className="text-5xl text-center text-black mt-3 mb-7">
               {" "}
               Success! 🎉
             </h1>
-            <div className="text-center text-xl mb-5">
-              You successfully funded your wallet with{" "}
-              <span className="text-green-600">$100.00 USD</span> from Afridex
-            </div>
+            <div className="text-xl text-center text-black">{response}</div>
 
-            <div className="border shadow-xl rounded-lg p-4 grid lg:grid-cols-2 gap-8">
-              <div className="flex flex-col space-y-4">
-                <div>status</div>
-                <div className="text-green-600 text-lg font-medium">
-                  Completed
-                </div>
-              </div>
-              <div className="flex flex-col space-y-4">
-                <div>Fee</div>
-                <div>$0.50</div>
-              </div>
-            </div>
-
-           <a href="/">
-           <button  className="w-full p-3 rounded-md text-white font-bold my-8 bg-afridex-core">
-           Go Home
-           </button></a>
+            <a href="/">
+              <button className="w-full p-3 rounded-md text-white font-bold my-8 bg-afridex-core">
+                Go Home
+              </button>
+            </a>
           </div>
         </DialogContent>
       </BootstrapDialog>
     </div>
-  ); 
+  );
 }

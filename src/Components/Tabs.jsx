@@ -4,7 +4,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-
+import ResponseModal from './Modals/ResponseModal'
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -44,6 +44,15 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
   return (
     <div className="bg-white p-5 rounded-xl shadow-lg">
@@ -84,7 +93,7 @@ export default function BasicTabs() {
                 </div>
               </div>
               <div className=" w-full">
-                <button className="px-6 transition duration-300 hover:bg-gray-600 hover:scale-110 p-3 text-base font-medium rounded-md text-center bg-gray-500 text-white">
+                <button onClick={handleClickOpen} className="px-6 transition duration-300 hover:bg-gray-600 hover:scale-110 p-3 text-base font-medium rounded-md text-center bg-gray-500 text-white">
                   Save Changes
                 </button>
               </div>
@@ -130,7 +139,7 @@ export default function BasicTabs() {
               </div>
             </div>
             <div className=" w-full">
-              <button className="px-6 transition duration-300 hover:bg-gray-600 hover:scale-110 p-3 text-base font-medium rounded-md text-center bg-gray-500 text-white">
+              <button onClick={handleClickOpen} className="px-6 transition duration-300 hover:bg-gray-600 hover:scale-110 p-3 text-base font-medium rounded-md text-center bg-gray-500 text-white">
                 Save Changes
               </button>
             </div>
@@ -151,6 +160,13 @@ export default function BasicTabs() {
         </div>
       </TabPanel>
       </Box>
+
+      <ResponseModal 
+
+      open={open}
+      handleClose={handleClose}
+      response={ value === 0 ? 'You successfully changed your Profile Details. You can login with the new credential.' :  'You successfully changed your password. You can login with the new credential.'}
+      />
     </div>
   );
 }
