@@ -2,12 +2,12 @@ import "../assets/styles/dashboard.css";
 import afridex_logo from "../assets/images/afridex_logo.svg";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import DashboardHome from "../Components/Dashbaords/Home";
-import Transactions from "../Components/Dashbaords/Transactions";
-import TransactionDetails from "../Components/Dashbaords/TransactionDetails";
-import Cards from "../Components/Dashbaords/Cards";
-import Referral from "../Components/Dashbaords/Referral";
-import Settings from "../Components/Dashbaords/Settings";
+import DashboardHome from "../../Components/Dashbaords/Home";
+import Transactions from "../../Components/Dashbaords/Transactions";
+import TransactionDetails from "../../Components/Dashbaords/TransactionDetails";
+import Cards from "../../Components/Dashbaords/Cards";
+import Referral from "../../Components/Dashbaords/Referral";
+import Settings from "../../Components/Dashbaords/Settings";
 export default function Dashboard() {
   const sidebarContent = [
     {
@@ -23,7 +23,7 @@ export default function Dashboard() {
     {
       link: "/dashboard/card",
       icon: "fa fa-credit-card",
-      title: "Cards",
+      title: "Card",
     },
     {
       link: "/dashboard/referral",

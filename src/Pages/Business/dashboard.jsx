@@ -1,37 +1,43 @@
-import "../assets/styles/dashboard.css";
-import afridex_logo from "../assets/images/afridex_logo.svg";
+import "../../assets/styles/dashboard.css";
+import afridex_logo from "../../assets/images/afridex_logo.svg";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import DashboardHome from "../Components/Dashbaords/Home";
-import Transactions from "../Components/Dashbaords/Transactions";
-import TransactionDetails from "../Components/Dashbaords/TransactionDetails";
-import Cards from "../Components/Dashbaords/Cards";
-import Referral from "../Components/Dashbaords/Referral";
-import Settings from "../Components/Dashbaords/Settings";
+import BusinessHome from "../../Components/Business/Home";
+import BusinessTransactions from "../../Components/Business/Transactions";
+import BusinessTransactionDetails from "../../Components/Business/TransactionDetails";
+import BusinessCards from "../../Components/Business/Cards";
+import BusinessReferral from "../../Components/Business/Referral";
+import BusinessSettings from "../../Components/Business/Settings";
+import BusinessPayment from "../../Components/Business/Payment";
 export default function Dashboard() {
   const sidebarContent = [
     {
-      link: "/dashboard/home",
+      link: "/business/home",
       icon: "fa fa-home-lg-alt",
       title: "Home",
     },
     {
-      link: "/dashboard/transactions",
+      link: "/business/transactions",
       icon: "fa fa-chart-bar",
       title: "Transactions",
     },
     {
-      link: "/dashboard/card",
+      link: "/business/card",
       icon: "fa fa-credit-card",
       title: "Cards",
     },
     {
-      link: "/dashboard/referral",
+      link: "/business/payments",
+      icon: "fa fa-database",
+      title: "Payment Collection",
+    },
+    {
+      link: "/business/referral",
       icon: "fa fa-layer-group",
       title: "Referral",
     },
     {
-      link: "/dashboard/settings",
+      link: "/business/settings",
       icon: "fa fa-cog",
       title: "Settings",
     },
@@ -43,8 +49,8 @@ export default function Dashboard() {
 
   let navigate = useNavigate();
   useEffect(() => {
-    if (window.location.pathname === "/") {
-      navigate("/dashboard/home");
+    if (window.location.pathname === "/business/") {
+      navigate("/business/home");
     }
   });
   const handleToggle = () => {
@@ -121,18 +127,21 @@ export default function Dashboard() {
           </div>
         </aside>
         <div className="col-span-12 md:col-span-9 lg:col-span-10 overflow-y-scroll  px-4 lg:px-30px py-3 w-full">
-          <Routes>
-            <Route path="/dashboard/home" element={<DashboardHome />} />
-            <Route path="/dashboard/transactions/" element={<Transactions />} />
+       
+       
+        <Routes>
+            <Route path="/home" element={<BusinessHome />} />
+            <Route path="/transactions/" element={<BusinessTransactions />} />
+            <Route path="/payment/" element={<BusinessPayment />} />
 
             <Route
-              path="/dashboard/transactions/details/"
-              element={<TransactionDetails />}
+              path="/transactions/details/"
+              element={<BusinessTransactionDetails />}
             />
 
-            <Route path="/dashboard/card" element={<Cards />} />
-            <Route path="/dashboard/referral" element={<Referral />} />
-            <Route path="/dashboard/Settings" element={<Settings />} />
+            <Route path="/card" element={<BusinessCards />} />
+            <Route path="/referral" element={<BusinessReferral />} />
+            <Route path="/settings" element={<BusinessSettings />} />
           </Routes>
         </div>
       </div>
