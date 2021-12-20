@@ -68,7 +68,7 @@ export default function BasicTabs() {
           </Tabs>
         </Box>
         <TabPanel value={value} index={0}>
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-2 lg:gap-6">
             <div className="flex flex-col ">
               <div>
                 <span className="font-bold text-xs mb-6 uppercase">Email</span>
@@ -92,11 +92,7 @@ export default function BasicTabs() {
                   />
                 </div>
               </div>
-              <div className=" w-full">
-                <button onClick={handleClickOpen} className="px-6 transition duration-300 hover:bg-gray-600 hover:scale-110 p-3 text-base font-medium rounded-md text-center bg-gray-500 text-white">
-                  Save Changes
-                </button>
-              </div>
+              
             </div>
 
             <div>
@@ -112,9 +108,14 @@ export default function BasicTabs() {
               </div>
             </div>
           </div>
+          <div className=" w-full">
+                <button onClick={handleClickOpen} className="px-6 transition duration-300 hover:bg-gray-600 hover:scale-110 p-3 text-base font-medium rounded-md text-center bg-gray-500 text-white">
+                  Save Changes
+                </button>
+              </div>
         </TabPanel>
         <TabPanel value={value} index={1}>
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 lg:gap-6">
           <div className="flex flex-col ">
             <div>
               <span className="font-bold text-xs mb-6 uppercase">Current Password</span>
@@ -138,11 +139,7 @@ export default function BasicTabs() {
                 />
               </div>
             </div>
-            <div className=" w-full">
-              <button onClick={handleClickOpen} className="px-6 transition duration-300 hover:bg-gray-600 hover:scale-110 p-3 text-base font-medium rounded-md text-center bg-gray-500 text-white">
-                Save Changes
-              </button>
-            </div>
+           
           </div>
 
           <div>
@@ -158,6 +155,11 @@ export default function BasicTabs() {
             </div>
           </div>
         </div>
+        <div className=" w-full">
+        <button onClick={handleClickOpen} className="px-6 transition duration-300 hover:bg-gray-600 hover:scale-110 p-3 text-base font-medium rounded-md text-center bg-gray-500 text-white">
+          Save Changes
+        </button>
+      </div>
       </TabPanel>
       </Box>
 

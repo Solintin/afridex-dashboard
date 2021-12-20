@@ -1,6 +1,6 @@
 import BoltIcon from "@mui/icons-material/Bolt";
 import Tabs from "../Tabs";
-import RightHandle from "../RightHandle";
+import RightHandle from "../RightTopHandle";
 
 const Settings = () => {
   return (

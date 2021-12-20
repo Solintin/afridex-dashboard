@@ -4,7 +4,7 @@ import wallet from "../../assets/images/Wallet.png";
 import transfer from "../../assets/images/transfer.svg";
 import buy from "../../assets/images/buy.svg";
 import BasicTable from "../Table";
-import RightHandle from "../RightHandle";
+import RightHandle from "../RightTopHandle";
 
 import DepositDialog from "../Modals/Deposit";
 import BuyUsdt from "../Modals/BuyUsdt";
@@ -86,7 +86,7 @@ const DashboardContent = () => {
       </div>
 
       <div className="my-10 flex flex-col lg:flex-row md:space-x-3 items-stretch cursor-pointer">
-        <div className="flex flex-col rounded-xl my-2 transform hover:scale-105 transition-all duration-300  h-60 w-full ml-2 mr-1">
+        <div className="flex flex-col rounded-xl my-2 transform hover:scale-105 transition-all duration-300  h-60 w-full md:ml-2 md:mr-1">
           <div className="h-3/4 p-6    rounded-t-xl bg-afridex-core  flex justify-between">
             <div className="flex-col space-y-5 text-white">
               <h4 className="font-thin text-base">USCD Wallet</h4>

@@ -1,6 +1,6 @@
 import BasicTable from "../Table";
 
-import RightHandle from "../RightHandle";
+import RightHandle from "../RightTopHandle";
 
 const Transactions = () => {
   return (

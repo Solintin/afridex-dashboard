@@ -3,7 +3,7 @@ import { useState } from "react";
 import BasicCardTable from "../CardTable";
 import CardDetail from "../Modals/CardDetail";
 import PersonalCard from "../PersonalCard";
-import RightHandle from "../RightHandle";
+import RightHandle from "../RightTopHandle";
 
 const Transactions = () => {
   const [open, setOpen] = useState(false);

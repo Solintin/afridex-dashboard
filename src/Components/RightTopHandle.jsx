@@ -39,7 +39,7 @@ export default function LeadingClickAway() {
         <button type="button" onClick={handleClick}>
           <span className="text-lg text-500 mr-2 ">Options</span>
           <span>
-            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-v" aria-hidden="true"></i>
           </span>
         </button>
         {open ? (
