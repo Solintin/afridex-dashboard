@@ -1,12 +1,19 @@
 import BoltIcon from "@mui/icons-material/Bolt";
 import Tabs from "../Tabs";
+import RightHandle from "../RightHandle";
 
 const Settings = () => {
   return (
-    <section className="max-w-6xl">
+    <section className="">
       <div className=" mb-9 flex justify-between items-center">
-        <div className="font-bold text-lg">Settings</div>
-        <div className="flex items-center">
+        <div className="font-bold text-2xl md:text-lg  ml-8 md:ml-0">
+          Settings
+        </div>
+
+        <div className="flex md:hidden">
+          <RightHandle />
+        </div>
+        <div className="hidden md:flex items-center">
           <button className="text-afridex-core hover:bg-afridex-core hover:text-white rounded-lg border border-afridex-core p-2 flex">
             <span className="mr-2">
               <BoltIcon className="hover:text-white transition duration-300"></BoltIcon>
@@ -24,7 +31,6 @@ const Settings = () => {
           </div>
         </div>
       </div>
-
       <Tabs />
     </section>
   );

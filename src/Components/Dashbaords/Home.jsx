@@ -3,17 +3,18 @@ import afridex_coin from "../../assets/images/afridex_coin.svg";
 import wallet from "../../assets/images/Wallet.png";
 import transfer from "../../assets/images/transfer.svg";
 import buy from "../../assets/images/buy.svg";
- import BasicTable from '../Table'
+import BasicTable from "../Table";
+import RightHandle from "../RightHandle";
 
- import DepositDialog from "../Modals/Deposit"
- import BuyUsdt from "../Modals/BuyUsdt"
- import TransactionModal from "../Modals/TransactionModal"
-import { useState } from "react";
+import DepositDialog from "../Modals/Deposit";
+import BuyUsdt from "../Modals/BuyUsdt";
+import TransactionModal from "../Modals/TransactionModal";
+import { useRef, useState } from "react";
+import Alert from "../Alert";
 
 const DashboardContent = () => {
-
   //  const [openModal, setOpenModal] = useState(false)
-   const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -21,7 +22,7 @@ const DashboardContent = () => {
   const handleClose = () => {
     setOpen(false);
   };
-   const [openTrsf, setOpenTrsf] = useState(false);
+  const [openTrsf, setOpenTrsf] = useState(false);
 
   const handleClickOpenTrsf = () => {
     setOpenTrsf(true);
@@ -29,7 +30,7 @@ const DashboardContent = () => {
   const handleCloseTrsf = () => {
     setOpenTrsf(false);
   };
-   const [openUsdt, setOpenUsdt] = useState(false);
+  const [openUsdt, setOpenUsdt] = useState(false);
 
   const handleClickOpenUsdt = () => {
     setOpenUsdt(true);
@@ -38,12 +39,34 @@ const DashboardContent = () => {
     setOpenUsdt(false);
   };
 
+  const [openNotify, setOpenNotify] = useState(false);
+
+  const copyText = useRef("");
+  const handleCopy = () => {
+    navigator.clipboard.writeText(copyText.current.innerHTML).then(
+      function () {
+        setOpenNotify(true);
+      },
+      function () {
+        alert("Copying Failed");
+      }
+    );
+  };
+
+  const handleCloseNotification = () => {
+    setOpenNotify(false);
+  };
 
   return (
-    <section className="max-w-6xl">
+    <section className="">
       <div className=" mb-9 flex justify-between items-center">
-        <div className="font-bold text-lg" >Home</div>
-        <div className="flex items-center">
+        <div className="font-bold text-2xl md:text-lg  ml-8 md:ml-0">Home</div>
+
+        <div className="flex md:hidden">
+          <RightHandle />
+        </div>
+
+        <div className="hidden md:flex items-center">
           <button className="text-afridex-core hover:bg-afridex-core hover:text-white rounded-lg border border-afridex-core p-2 flex">
             <span className="mr-2">
               <BoltIcon className="hover:text-white transition duration-300"></BoltIcon>
@@ -62,8 +85,8 @@ const DashboardContent = () => {
         </div>
       </div>
 
-      <div className="my-10 flex space-x-3 items-stretch cursor-pointer">
-        <div className="flex flex-col rounded-xl transform hover:scale-105 transition-all duration-300  h-60 w-420px ml-2 mr-1">
+      <div className="my-10 flex flex-col lg:flex-row md:space-x-3 items-stretch cursor-pointer">
+        <div className="flex flex-col rounded-xl my-2 transform hover:scale-105 transition-all duration-300  h-60 w-full ml-2 mr-1">
           <div className="h-3/4 p-6    rounded-t-xl bg-afridex-core  flex justify-between">
             <div className="flex-col space-y-5 text-white">
               <h4 className="font-thin text-base">USCD Wallet</h4>
@@ -80,10 +103,10 @@ const DashboardContent = () => {
           <div className="h-1/45    px-6 py-2 rounded-b-xl bg-blue-800">
             <h2 className="text-white">Wallet Address</h2>
             <div className="flex justify-between">
-              <div className="text-gray-500">
+              <div ref={copyText} className="text-gray-500">
                 0xa0b86991c62...9eb0ce3606eb48
               </div>
-              <div className="cursor-pointer">
+              <div onClick={handleCopy} className="cursor-pointer">
                 <svg
                   width="20"
                   height="20"
@@ -104,7 +127,7 @@ const DashboardContent = () => {
           </div>
         </div>
 
-        <div className="p-3 bg-white rounded-xl flex-col transform hover:scale-105 transition-all duration-200 space-y-4">
+        <div className="p-3 bg-white w-full rounded-xl my-2 flex-col transform hover:scale-105 transition-all duration-200 space-y-4">
           <div>
             <img src={wallet} alt="wallet" />
           </div>
@@ -113,11 +136,14 @@ const DashboardContent = () => {
           <div className="font-thin text-gray-500 text-xs">
             Lets you buy, sell, store and trade BTC
           </div>
-          <button onClick={handleClickOpenUsdt} className="w-8/12   text-center  transition duration-300 hover:bg-afridex-core-hover  p-1 text-sm font-bold rounded-md bg-afridex-core text-white">
+          <button
+            onClick={handleClickOpenUsdt}
+            className="w-8/12   text-center  transition duration-300 hover:bg-afridex-core-hover  p-1 text-sm font-bold rounded-md bg-afridex-core text-white"
+          >
             Buy USDT
           </button>
         </div>
-        <div className="p-3 bg-white rounded-xl flex-col transform hover:scale-105 transition-all duration-200 space-y-4">
+        <div className="p-3 bg-white w-full rounded-xl my-2 flex-col transform hover:scale-105 transition-all duration-200 space-y-4">
           <div>
             <img src={transfer} alt="transfer" />
           </div>
@@ -126,11 +152,14 @@ const DashboardContent = () => {
           <div className="font-thin text-gray-500 text-xs">
             Initiate a quick fund transfer to your bank
           </div>
-          <button onClick={handleClickOpenTrsf} className="w-8/12 transition duration-300 hover:bg-green-500  p-1 text-sm font-bold rounded-md text-center bg-green-400 text-white">
+          <button
+            onClick={handleClickOpenTrsf}
+            className="w-8/12 transition duration-300 hover:bg-green-500  p-1 text-sm font-bold rounded-md text-center bg-green-400 text-white"
+          >
             Transfer
           </button>
         </div>
-        <div className="p-3 bg-white rounded-xl flex-col transform hover:scale-105 transition-all duration-200 space-y-4">
+        <div className="p-3 bg-white w-full rounded-xl my-2 flex-col transform hover:scale-105 transition-all duration-200 space-y-4">
           <div>
             <img src={buy} alt="wallet" />
           </div>
@@ -139,21 +168,18 @@ const DashboardContent = () => {
           <div className="font-thin text-gray-500 text-xs">
             Lets you buy, sell, store and trade BTC
           </div>
-          <button onClick={handleClickOpen} className="w-8/12 transition duration-300 hover:bg-blue-500  p-1 text-sm font-bold rounded-md text-center bg-blue-700 text-white">
+          <button
+            onClick={handleClickOpen}
+            className="w-8/12 transition duration-300 hover:bg-blue-500  p-1 text-sm font-bold rounded-md text-center bg-blue-700 text-white"
+          >
             Deposit USDT
           </button>
         </div>
       </div>
 
-      <DepositDialog open={open} 
-      handleClose={handleClose} />
-      <BuyUsdt open={openUsdt} 
-      handleClose={handleCloseUsdt}
-      />
-      <TransactionModal 
-      open={openTrsf} 
-      handleClose={handleCloseTrsf}
-      />
+      <DepositDialog open={open} handleClose={handleClose} />
+      <BuyUsdt open={openUsdt} handleClose={handleCloseUsdt} />
+      <TransactionModal open={openTrsf} handleClose={handleCloseTrsf} />
 
       <div className=" mb-5 flex justify-between items-center">
         <div className="font-bold text-lg">Transaction History</div>
@@ -200,6 +226,12 @@ const DashboardContent = () => {
       </div>
 
       <BasicTable />
+      <Alert
+        message={"Wallet Address Copied"}
+        type={"success"}
+        open={openNotify}
+        handleCloseNotification={handleCloseNotification}
+      />
     </section>
   );
 };

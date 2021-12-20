@@ -1,12 +1,20 @@
 import BasicTable from "../Table";
 
+import RightHandle from "../RightHandle";
+
 const Transactions = () => {
   return (
-    <section className="max-w-6xl">
+    <section className="">
       <div className=" mb-9 flex justify-between items-center">
-        <div className="font-bold text-lg">Transactions</div>
-        <div className="flex items-center">
-          <select name="" id="" className="bg-transparent outline-none">
+        <div className="font-bold text-2xl md:text-lg  ml-8 md:ml-0">
+          Transactions
+        </div>
+
+        <div className="flex md:hidden">
+          <RightHandle />
+        </div>
+        <div className="hidden md:flex  items-center">
+          <select name="" id="" className="bg-white rounded-md h-10 w-20 outline-none">
             <option value="usd">$USD</option>
             <option value="usd">#NGN</option>
             <option value="usd">%YEN</option>
@@ -92,7 +100,6 @@ const Transactions = () => {
       </div>
 
       <BasicTable />
-
     </section>
   );
 };

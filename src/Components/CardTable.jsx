@@ -1,26 +1,28 @@
 import afridex_coin from "../assets/images/afridex_coin.svg";
+import MobileTable from "./MobileTable";
+
 export default function BasicTable() {
   return (
     <>
-      <div className="table-section max-w-6xl mt-10 lg:mt-10 rounded-2xl bg-white shadow-2xl py-2">
+    <MobileTable />
+
+      <div className="hidden lg:flex  table-section  mt-10 lg:mt-10 rounded-2xl bg-white shadow-2xl py-2">
         <div className="table-wrapper  w-full overflow-x-scroll lg:overflow-x-hidden pb-6">
           <div className="flex my-2 justify-between px-5">
             <div className="rounded-md px-2 border border-afridex-neutral text-gray-700 flex">
               <button className="border-r border-gray-300x  pr-2 ">
                 All Card
               </button>
-              <button className="border-r border-gray-300 px-2 ">
-                Card 1
-              </button>
+              <button className="border-r border-gray-300 px-2 ">Card 1</button>
               <button className="pl-2  ">Card 2</button>
             </div>
 
             <div className="flex text-sm font-medium items-center space-x-3">
               <div className="relative">
-              <div>
-              <i className="absolute z-10  -left-48 -top-2 text-afridex-gray fa fa-search mr-2 "></i>
-            </div>
-           
+                <div>
+                  <i className="absolute z-10  -left-48 -top-2 text-afridex-gray fa fa-search mr-2 "></i>
+                </div>
+
                 <input
                   type="text"
                   placeholder="Search.."
@@ -112,6 +114,7 @@ export default function BasicTable() {
             >
               See All Transactions
             </a>
+
           </div>
         </div>
       </div>

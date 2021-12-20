@@ -1,4 +1,18 @@
-.dashboard-container{
-    background: linear-gradient(180deg, #F1FAFD 0%, #F6F5FF 59.82%, rgba(255, 245, 230, 0.99) 129.05%);
-   
+.dashboard-container {
+  background: linear-gradient(
+    180deg,
+    #f1fafd 0%,
+    #f6f5ff 59.82%,
+    rgba(255, 245, 230, 0.99) 129.05%
+  );
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    left: -100vw;
+    transition: all 0.3s linear;
+  }
+  .sidebar.isOpen {
+    left: 0;
+  }
 }

@@ -1,7 +1,7 @@
 export default function BasicTable() {
   return (
     <>
-      <div className="table-section max-w-6xl mt-10 lg:mt-10 rounded-2xl bg-white shadow-2xl py-2">
+      <div className="table-section  mt-10 lg:mt-10 rounded-2xl bg-white shadow-2xl py-2">
         <div className="table-wrapper  w-full overflow-x-scroll lg:overflow-x-hidden pb-6">
           <table className="w-full items-center table-auto">
             <thead>

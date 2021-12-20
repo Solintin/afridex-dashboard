@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useRef } from "react";
+
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
@@ -46,14 +48,17 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function CustomizedDialogs({ open, handleClose }) {
-  //   const [open, setOpen] = React.useState(false);
-
-  //   const handleClickOpen = () => {
-  //     setOpen(true);
-  //   };
-  //   const handleClose = () => {
-  //     setOpen(false);
-  //   };
+  const copyText = useRef("");
+  const handleCopy = () => {
+    navigator.clipboard.writeText(copyText.current.innerHTML).then(
+      function () {
+        alert("Address Copied");
+      },
+      function () {
+        alert("Copying Failed");
+      }
+    );
+  };
 
   return (
     <div>
@@ -116,8 +121,8 @@ export default function CustomizedDialogs({ open, handleClose }) {
             </div>
 
             <div className="p-2 bg-gray-200 flex justify-between rounded-md shadow-md">
-              <div>0xf8aaa2b1842e796191e736434479</div>
-              <div className="cursor-pointer">
+              <div  ref={copyText} >0xf8aaa2b1842e796191e736434479</div>
+              <div className="cursor-pointer" onClick={handleCopy}>
               <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 20C12.2614 20 14.5 17.7614 14.5 15C14.5 12.2386 12.2614 10 9.5 10C6.73858 10 4.5 12.2386 4.5 15C4.5 17.7614 6.73858 20 9.5 20ZM9.5 22C13.366 22 16.5 18.866 16.5 15C16.5 11.134 13.366 8 9.5 8C5.63401 8 2.5 11.134 2.5 15C2.5 18.866 5.63401 22 9.5 22Z" fill="#777E91"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4996 4C14.0188 4 12.6895 4.6424 11.7725 5.66691C11.4042 6.07844 10.772 6.11346 10.3604 5.74513C9.94891 5.37681 9.91389 4.74461 10.2822 4.33309C11.5625 2.9026 13.4263 2 15.4996 2C19.3656 2 22.4996 5.13401 22.4996 9C22.4996 11.0733 21.597 12.937 20.1665 14.2173C19.755 14.5857 19.1228 14.5507 18.7544 14.1391C18.3861 13.7276 18.4211 13.0954 18.8327 12.7271C19.8572 11.8101 20.4996 10.4807 20.4996 9C20.4996 6.23858 18.261 4 15.4996 4Z" fill="#777E91"/>
