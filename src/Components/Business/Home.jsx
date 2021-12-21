@@ -3,12 +3,12 @@ import afridex_coin from "../../assets/images/afridex_coin.svg";
 import wallet from "../../assets/images/Wallet.png";
 import transfer from "../../assets/images/transfer.svg";
 import buy from "../../assets/images/buy.svg";
-import BasicTable from "../Table";
+import BasicTable from "../Tables/Table";
 import RightHandle from "../RightTopHandle";
 
-import DepositDialog from "../Modals/Deposit";
-import BuyUsdt from "../Modals/BuyUsdt";
-import TransactionModal from "../Modals/TransactionModal";
+import DepositDialog from "../Modals/Personal/Deposit";
+import BuyUsdt from "../Modals/Personal/BuyUsdt";
+import TransactionModal from "../Modals/Personal/TransactionModal";
 import { useRef, useState } from "react";
 import Alert from "../Alert";
 

@@ -2,12 +2,12 @@ import "../assets/styles/dashboard.css";
 import afridex_logo from "../assets/images/afridex_logo.svg";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import DashboardHome from "../../Components/Dashbaords/Home";
-import Transactions from "../../Components/Dashbaords/Transactions";
-import TransactionDetails from "../../Components/Dashbaords/TransactionDetails";
-import Cards from "../../Components/Dashbaords/Cards";
-import Referral from "../../Components/Dashbaords/Referral";
-import Settings from "../../Components/Dashbaords/Settings";
+import DashboardHome from "../../Components/Personal/Home";
+import Transactions from "../../Components/Personal/Transactions";
+import TransactionDetails from "../../Components/Personal/TransactionDetails";
+import Cards from "../../Components/Personal/Cards";
+import Referral from "../../Components/Personal/Referral";
+import Settings from "../../Components/Personal/Settings";
 export default function Dashboard() {
   const sidebarContent = [
     {

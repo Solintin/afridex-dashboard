@@ -1,4 +1,4 @@
-import BasicTable from "../Table";
+import BasicTable from "../Tables/Table";
 
 import RightHandle from "../RightTopHandle";
 

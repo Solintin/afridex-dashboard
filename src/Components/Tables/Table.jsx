@@ -1,4 +1,4 @@
-import afridex_coin from "../assets/images/afridex_coin.svg";
+import afridex_coin from "../../assets/images/afridex_coin.svg";
 import { useNavigate } from "react-router-dom";
 import MobileTable from "./MobileTable";
 

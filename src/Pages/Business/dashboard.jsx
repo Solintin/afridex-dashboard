@@ -4,7 +4,7 @@ import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BusinessHome from "../../Components/Business/Home";
 import BusinessTransactions from "../../Components/Business/Transactions";
-import BusinessTransactionDetails from "../../Components/Business/TransactionDetails";
+import BusinessPaymentDetails from "../../Components/Business/PaymentDetails";
 import BusinessCards from "../../Components/Business/Cards";
 import BusinessReferral from "../../Components/Business/Referral";
 import BusinessSettings from "../../Components/Business/Settings";
@@ -61,7 +61,7 @@ export default function Dashboard() {
     <>
       <div
         onClick={handleToggle}
-        className="menu-toggle md:hidden z-10  border bg-blue-50 rounded-full shadow-lg p-1 absolute -top-1 left-3 mr-5 mt-4"
+        className="menu-toggle md:hidden z-10  border bg-blue-50 rounded-full shadow-lg p-1 absolute -top-2 left-3 mr-5 mt-4"
       >
         <svg
           width="24"
@@ -127,16 +127,14 @@ export default function Dashboard() {
           </div>
         </aside>
         <div className="col-span-12 md:col-span-9 lg:col-span-10 overflow-y-scroll  px-4 lg:px-30px py-3 w-full">
-       
-       
-        <Routes>
+          <Routes>
             <Route path="/home" element={<BusinessHome />} />
             <Route path="/transactions/" element={<BusinessTransactions />} />
-            <Route path="/payment/" element={<BusinessPayment />} />
+            <Route path="/payments/" element={<BusinessPayment />} />
 
             <Route
-              path="/transactions/details/"
-              element={<BusinessTransactionDetails />}
+              path="/Payments/details/"
+              element={<BusinessPaymentDetails />}
             />
 
             <Route path="/card" element={<BusinessCards />} />

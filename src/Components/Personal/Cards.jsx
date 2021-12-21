@@ -1,7 +1,7 @@
 import BoltIcon from "@mui/icons-material/Bolt";
 import { useState } from "react";
-import BasicCardTable from "../CardTable";
-import CardDetail from "../Modals/CardDetail";
+import BasicCardTable from "../Tables/CardTable";
+import CardDetail from "../Modals/Personal/CardDetail";
 import PersonalCard from "../PersonalCard";
 import RightHandle from "../RightTopHandle";
 

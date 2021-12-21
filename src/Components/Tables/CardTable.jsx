@@ -1,4 +1,4 @@
-import afridex_coin from "../assets/images/afridex_coin.svg";
+import afridex_coin from "../../assets/images/afridex_coin.svg";
 import MobileTable from "./MobileTable";
 
 export default function BasicTable() {

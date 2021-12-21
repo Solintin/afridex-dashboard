@@ -1,13 +1,26 @@
-import afridex_coin from "../assets/images/afridex_coin.svg";
+import afridex_coin from "../../assets/images/afridex_coin.svg";
 import { useNavigate } from "react-router-dom";
 import MobileTable from "./MobileTable";
-
+import { useState } from "react";
+import LinkSuccessAction from '../Modals/Business/LinkSuccessAction'
 export default function BasicTable() {
   const navigator = useNavigate();
-  const handleLink = () => {
-    if (window.location.pathname.includes("/transactions")) {
+  const handleLink = (e) => {
+      e.stopPropagation();
+      
+    if (window.location.pathname.includes("/payments")) {
       navigator(`${window.location.pathname}/details`);
     }
+  };
+
+  
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
   };
   return (
     <>
@@ -31,7 +44,7 @@ export default function BasicTable() {
               {[...Array(10)].map((i, idx) => {
                 return (
                   <tr
-                    onClick={handleLink}
+                   
                     key={idx}
                     className="hover:bg-gray-100 border-b border-gray-200 py-3 cursor-pointer"
                   >
@@ -68,7 +81,7 @@ export default function BasicTable() {
                     </td>
                     <td className="text-sm px-3 flex space-x-2 justify-center items-center whitespace-nowrap leading-5  text-afridex font-medium">
                       <div>
-                        <button className=" bg-afridex-core  items-center my-2  text-white rounded-xl border  p-2 flex">
+                        <button onClick={handleClickOpen} className=" bg-afridex-core  items-center my-2  text-white rounded-xl border  p-2 flex">
                           <span className="mr-1">
                             <div className="h-2 w-2 bg-white rounded-full mr-2"></div>
                           </span>
@@ -100,6 +113,8 @@ export default function BasicTable() {
           </div>
         </div>
       </div>
+      <LinkSuccessAction open={open} handleClose={handleClose} />
+      
     </>
   );
 }

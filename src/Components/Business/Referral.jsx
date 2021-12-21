@@ -1,6 +1,6 @@
 import BoltIcon from "@mui/icons-material/Bolt";
 import { useRef, useState } from "react";
-import ReferralTable from "../ReferralTable";
+import ReferralTable from "../Tables/ReferralTable";
 import RightHandle from "../RightTopHandle";
 import Alert from "../Alert";
 

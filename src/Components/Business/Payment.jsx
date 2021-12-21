@@ -1,9 +1,18 @@
-import PaymentTable from "../PaymentTable";
+import PaymentTable from "../../Components/Tables/PaymentTable";
 import BoltIcon from "@mui/icons-material/Bolt";
-
+import PaymentLink from "../Modals/Business/PaymentLink"
 import RightHandle from "../RightTopHandle";
+import { useState } from "react";
 
 const Transactions = () => {
+    const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <section className="">
       <div className=" mb-9 flex justify-between items-center">
@@ -15,7 +24,7 @@ const Transactions = () => {
           <RightHandle />
         </div>
         <div className="hidden md:flex  items-center">
-          <button className="text-afridex-core hover:bg-afridex-core hover:text-white rounded-lg border border-afridex-core p-2 flex">
+        <button onClick={handleClickOpen} className="text-afridex-core hover:bg-afridex-core hover:text-white rounded-lg border border-afridex-core p-2 flex">
             <span className="mr-2">
               <BoltIcon className="hover:text-white transition duration-300"></BoltIcon>
             </span>
@@ -89,7 +98,7 @@ const Transactions = () => {
           </div>
 
           <div className="font-semibold text-sm ">
-            <span className="mr-1 text-green-400">Ipdated </span>
+            <span className="mr-1 text-gray-400">Updated </span>
             <span> -10/10/2021</span>
           </div>
         </div>
@@ -98,7 +107,7 @@ const Transactions = () => {
       <div className=" mb-5 flex justify-between items-center">
         <div className="font-bold text-lg"> Payment Links</div>
         <div className="">
-          <button className="text-afridex-core hover:bg-afridex-core hover:text-white rounded-lg border border-afridex-core p-2 flex">
+        <button onClick={handleClickOpen} className="text-afridex-core hover:bg-afridex-core hover:text-white rounded-lg border border-afridex-core p-2 flex">
             <span className="mr-2">
               <BoltIcon className="hover:text-white transition duration-300"></BoltIcon>
             </span>
@@ -108,6 +117,8 @@ const Transactions = () => {
       </div>
 
       <PaymentTable />
+      
+      <PaymentLink open={open} handleClose={handleClose} />
     </section>
   );
 };

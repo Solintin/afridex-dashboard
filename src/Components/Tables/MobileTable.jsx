@@ -1,12 +1,12 @@
 import React from 'react';
-import afridex_coin from "../assets/images/afridex_coin.svg";
+import afridex_coin from "../../assets/images/afridex_coin.svg";
 
 const MobileTable = () => {
     return (
         <div>
         {[...Array(10)].map((item, idx) => {
             return (
-              <div key={idx} className=" my-5 lg:hidden bg-white flex flex-col w-full rounded-lg shadow-md p-2">
+              <div key={idx} className=" my-5 lg:hidden bg-white py-3 flex space-y-4 flex-col w-full rounded-lg shadow-md p-2">
                 <div className="flex justify-between">
                   <div>
                     <img
