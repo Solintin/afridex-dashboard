@@ -1,17 +1,17 @@
 import afridex_coin from "../../assets/images/afridex_coin.svg";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import MobileTable from "./MobileTable";
 import { useState } from "react";
 import LinkSuccessAction from '../Modals/Business/LinkSuccessAction'
 export default function BasicTable() {
-  const navigator = useNavigate();
-  const handleLink = (e) => {
-      e.stopPropagation();
+  // const navigator = useNavigate();
+  // const handleLink = (e) => {
+  //     e.stopPropagation();
       
-    if (window.location.pathname.includes("/payments")) {
-      navigator(`${window.location.pathname}/details`);
-    }
-  };
+  //   if (window.location.pathname.includes("/payments")) {
+  //     navigator(`${window.location.pathname}/details`);
+  //   }
+  // };
 
   
   const [open, setOpen] = useState(false);
