@@ -84,7 +84,7 @@ export default function CustomizedDialogs({ open, handleClose}) {
                 <div className="mt-1 bg-green-600 rounded-full w-3 h-3 mr-2"></div>
                 <span>Card Number</span>
               </div>
-              <div className="text-right">
+              <div className="text-right truncate">
                 <h1>381693003417361716</h1>
                 <h1>Amusat Usman</h1>
               </div>
