@@ -87,7 +87,7 @@ const DashboardContent = () => {
 
       <div className="my-10 flex flex-col lg:flex-row md:space-x-3 items-stretch cursor-pointer">
         <div className="flex flex-col rounded-xl my-2 transform hover:scale-105 transition-all duration-300  h-60 w-full md:ml-2 md:mr-1">
-          <div className="h-3/4 p-6    rounded-t-xl bg-afridex-core  flex justify-between">
+          <div className="h-3/4 p-6  w-full rounded-t-xl bg-afridex-core  flex justify-between">
             <div className="flex-col space-y-5 text-white">
               <h4 className="font-thin text-base">USCD Wallet</h4>
               <h1 className="font-bold text-3xl">1034</h1>
@@ -100,10 +100,10 @@ const DashboardContent = () => {
               <img src={afridex_coin} alt="afridex-coin" />
             </div>
           </div>
-          <div className="h-1/45    px-6 py-2 rounded-b-xl bg-blue-800">
+          <div className="h-1/45 w-full   px-6 py-2 rounded-b-xl bg-blue-800">
             <h2 className="text-white">Wallet Address</h2>
             <div className="flex justify-between">
-              <div ref={copyText} className="text-gray-500">
+              <div ref={copyText} className="text-gray-500 text-lg mr-5 truncate">
                 0xa0b86991c62...9eb0ce3606eb48
               </div>
               <div onClick={handleCopy} className="cursor-pointer">

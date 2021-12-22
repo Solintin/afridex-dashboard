@@ -69,7 +69,7 @@ export default function CustomizedDialogs({ open, handleClose }) {
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <div className="p-4">
-            <div className="p-2 text-sm my-6 bg-afridex-blue-100 rounded-lg border grid lg:grid-cols-2 gap-8">
+            <div className="p-2 text-sm my-6 bg-afridex-blue-100 rounded-lg border  grid grid-cols-2 gap-8">
               <div>Available</div>
 
               <div className="text-right">10075.56213968 USDT</div>

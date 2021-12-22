@@ -69,11 +69,11 @@ export default function CustomizedDialogs({ open, handleClose}) {
           id="customized-dialog-title"
           onClose={handleClose}
         >
-          Fund Wallet Via Voucher
+          Fund Wallet 
         </BootstrapDialogTitle>
         <DialogContent dividers>
           <div className="p-4">
-            <div className="p-2 w-full   grid lg:grid-cols-2 gap-8">
+            <div className="p-2 w-full  place-content-center grid lg:grid-cols-2 gap-8">
               {[...Array(6)].map((i, idx) => {
                 return (
                   <div

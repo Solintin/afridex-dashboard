@@ -74,7 +74,7 @@ export default function CustomizedDialogs({ open, handleClose }) {
               <img src={MasterCard} alt="mastercard" />
             </div>
 
-            <div className="p-2 w-full bg-afridex-neutral rounded-sm shadow-md grid lg:grid-cols-2 gap-8">
+            <div className="p-2 w-full bg-afridex-neutral rounded-sm shadow-md grid grid-cols-2 gap-8">
               <div className="flex ">
                 <div className="mt-1 bg-green-600 rounded-full w-3 h-3 mr-2"></div>
                 <span>Card Number</span>
@@ -127,7 +127,7 @@ export default function CustomizedDialogs({ open, handleClose }) {
               </span>
             </div>
             </div>
-            <div className="my-8 grid lg:grid-cols-2 gap-6 place-content-center">
+            <div className="my-8 grid grid-cols-2 gap-6 place-content-center">
               <div>
                 <button className="w-full bg-afridex-gray-400 rounded-md p-2 text-xl text-white">
                   Freeze
