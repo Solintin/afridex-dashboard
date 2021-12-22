@@ -87,7 +87,7 @@ export default function Dashboard() {
 
         <aside
           className={`sidebar h-screen bg-white space-y-4 flex flex-col p-5
-           fixed transition-all duration-300 ease-in md:relative z-50 w-12/12 md:w-full md:col-span-3 lg:col-span-2
+           fixed transition-all duration-300 ease-in md:relative z-50 w-3/4 md:w-full md:col-span-3 lg:col-span-2
            ${showAside ? "isOpen" : null}`}
         >
           <div>
