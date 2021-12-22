@@ -24,8 +24,8 @@ const MainCard = () => {
       <div className="flex flex-col rounded-xl my-2   h-full w-full   ">
         <div className="h-3/4 p-6  w-full rounded-t-xl bg-afridex-core  flex justify-between">
           <div className="flex-col space-y-5 text-white">
-            <h4 className="font-thin text-base">USCD Wallet</h4>
-            <h1 className="font-bold text-3xl">1034</h1>
+            <h4 className="font-thin text-base -ml-12">USCD Wallet</h4>
+            <h1 className="font-bold text-3xl -ml-20">1034</h1>
             <h1 className="text-sm">
               <i className="fa fa-arrow-up text-green-500  "></i> $1034{" "}
               <span className="text-gray-500">USD Equivalent</span>{" "}
@@ -36,9 +36,9 @@ const MainCard = () => {
           </div>
         </div>
         <div className="h-full w-full   px-6 py-2 rounded-b-xl bg-blue-800">
-          <h2 className="text-white">Wallet Address</h2>
+          <h2 className="text-white -ml-52  md:-ml-64">Wallet Address</h2>
           <div className="flex justify-between">
-            <div ref={copyText} className="text-gray-500 text-lg mr-5 truncate">
+            <div ref={copyText} className="text-gray-500 text-lg ml-1 mr-5 truncate">
               0xa0b86991c62...9eb0ce3606eb48
             </div>
             <div onClick={handleCopy} className="cursor-pointer">

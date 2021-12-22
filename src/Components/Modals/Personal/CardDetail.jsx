@@ -7,6 +7,8 @@ import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import MasterCard from "../../../assets/images/mastercard.svg";
+import ResponseModal from './ResponseModal'
+
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
     padding: theme.spacing(2),
@@ -45,15 +47,18 @@ BootstrapDialogTitle.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
 
-export default function CustomizedDialogs({ open, handleClose }) {
-  //   const [open, setOpen] = React.useState(false);
+export default function CustomizedDialogs({ open, handleClose}) {
+    const [openModal, setOpenModal] = React.useState(false);
+    const [status, setStatus] = React.useState(null);
 
-  //   const handleClickOpen = () => {
-  //     setOpen(true);
-  //   };
-  //   const handleClose = () => {
-  //     setOpen(false);
-  //   };
+    const handleClickOpenModal = (id) => {
+      setStatus(id)
+      setOpenModal(true);
+    };
+    const handleCloseModal = () => {
+      setOpenModal(false);
+    };
+
 
   return (
     <div>
@@ -105,7 +110,7 @@ export default function CustomizedDialogs({ open, handleClose }) {
             <div className="my-6 text-gray-500 text-center">
               Block 6,1B Mobolaji Johnson estate Lagos LA 100001
             </div>
-
+            <a href="/business/payments/details">
             <div className="p-2 bg-gray-200 flex justify-center  cursor-pointer items-center rounded-md shadow-md">
               <div className="mr-2 ">View Transactions</div>
               <span>
@@ -126,21 +131,28 @@ export default function CustomizedDialogs({ open, handleClose }) {
                 </svg>
               </span>
             </div>
+            </a>
             </div>
-            <div className="my-8 grid grid-cols-2 gap-6 place-content-center">
-              <div>
-                <button className="w-full bg-afridex-gray-400 rounded-md p-2 text-xl text-white">
-                  Freeze
-                </button>
-              </div>
-              <div>
-                <button className="w-full bg-red-400 p-2 rounded-md text-xl text-white">
-                  Delete Card
-                </button>
-              </div>
+          <div className="my-8 grid grid-cols-2 gap-6 place-content-center">
+            <div>
+              <button onClick={()=> { handleClickOpenModal(0)} } className="w-full bg-afridex-gray-400 rounded-md p-2 text-xl text-white">
+                Freeze
+              </button>
             </div>
+            <div>
+              <button onClick={()=> { handleClickOpenModal(1)} } className="w-full bg-red-400 p-2 rounded-md text-xl text-white">
+                Delete Card
+              </button>
+            </div>
+          </div>
         </DialogContent>
       </BootstrapDialog>
+
+      <ResponseModal
+      open={openModal}
+      handleClose={handleCloseModal}
+      response={status === 0 ? 'Card Frozen Successfully' :  'Card Deleted Successfully'}
+      />
     </div>
   );
 }

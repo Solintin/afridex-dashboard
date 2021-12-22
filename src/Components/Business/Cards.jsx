@@ -57,7 +57,7 @@ const Transactions = () => {
 
           <div className="my-5  w-full overflow-x-scroll lg:overflow-x-hidden  grid lg:grid-cols-3 gap-6 cursor-pointer ">
             {[...Array(cardCounter)].map((i, idx) => {
-              return <PersonalCard handleClickOpen={handleClickOpen} />;
+              return <PersonalCard key={idx} handleClickOpen={handleClickOpen} />;
             })}
           </div>
         </div>

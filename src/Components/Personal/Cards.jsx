@@ -30,7 +30,7 @@ const Transactions = () => {
             <span className="mr-2">
               <BoltIcon className="hover:text-white transition duration-300"></BoltIcon>
             </span>
-            <span>Transfer</span>
+            <span>Fund Wallet</span>
           </button>
           <div className="bg-white rounded-md h-10 w-10 ml-2 mr-1 grid place-content-center">
             <i className="fa fa-cog text-afridex-gray  hover:text-black transition duration-300"></i>

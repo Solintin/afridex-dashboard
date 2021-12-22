@@ -5,13 +5,12 @@ import buy from "../../assets/images/buy.svg";
 import BasicTable from "../Tables/Table";
 import RightHandle from "../RightTopHandle";
 import Carousel from "../Carousel";
-import MainCard from "../MainCard";
 
 import DepositDialog from "../Modals/Personal/Deposit";
 import BuyUsdt from "../Modals/Personal/BuyUsdt";
 import TransactionModal from "../Modals/Personal/TransactionModal";
-import { useRef, useState } from "react";
-import Alert from "../Alert";
+import {  useState } from "react";
+
 
 const DashboardContent = () => {
   //  const [openModal, setOpenModal] = useState(false)
@@ -40,23 +39,7 @@ const DashboardContent = () => {
     setOpenUsdt(false);
   };
 
-  const [openNotify, setOpenNotify] = useState(false);
 
-  const copyText = useRef("");
-  const handleCopy = () => {
-    navigator.clipboard.writeText(copyText.current.innerHTML).then(
-      function () {
-        setOpenNotify(true);
-      },
-      function () {
-        alert("Copying Failed");
-      }
-    );
-  };
-
-  const handleCloseNotification = () => {
-    setOpenNotify(false);
-  };
 
   return (
     <section className="">
@@ -68,11 +51,11 @@ const DashboardContent = () => {
         </div>
 
         <div className="hidden md:flex items-center">
-          <button className="text-afridex-core hover:bg-afridex-core hover:text-white rounded-lg border border-afridex-core p-2 flex">
+          <button  onClick={handleClickOpenUsdt} className="text-afridex-core hover:bg-afridex-core hover:text-white rounded-lg border border-afridex-core p-2 flex">
             <span className="mr-2">
               <BoltIcon className="hover:text-white transition duration-300"></BoltIcon>
             </span>
-            <span>Transfer</span>
+            <span>Fund Wallet</span>
           </button>
           <div className="bg-white rounded-md h-10 w-10 ml-2 mr-1 grid place-content-center">
             <i className="fa fa-cog text-afridex-gray  hover:text-black transition duration-300"></i>
@@ -87,7 +70,7 @@ const DashboardContent = () => {
       </div>
 
       <div className="my-10 flex flex-col lg:flex-row md:space-x-4 cursor-pointer">
-        <div className="max-w-420px">
+        <div className=" w-full lg:w-420px">
           <Carousel />
         </div>
 
@@ -190,12 +173,7 @@ const DashboardContent = () => {
       </div>
 
       <BasicTable />
-      <Alert
-        message={"Wallet Address Copied"}
-        type={"success"}
-        open={openNotify}
-        handleCloseNotification={handleCloseNotification}
-      />
+   
     </section>
   );
 };

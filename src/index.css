@@ -31,3 +31,35 @@ html,
 .MuiBackdrop-root.css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
   background-color: rgba(2, 28, 37, 0.9);
 }
+
+.carousel .thumbs-wrapper{
+  margin : 0 !important;
+}
+.carousel.carousel-slider .control-arrow {
+  top: 0;
+  color: #fff !important;
+  font-size: 26px !important;
+  bottom: 0 !important;
+  margin: auto !important;
+  padding: 5px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: #fff !important;
+  border-radius: 99999px !important;
+  padding: 10px !important;
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.carousel .control-prev.control-arrow:before{
+  border-right: 10px solid #000 !important;
+  border-top: 10px solid transparent !important;
+  border-bottom: 10px solid transparent !important;
+}
+.carousel .control-next.control-arrow:before{
+  border-left: 10px solid #000 !important;
+  border-top: 10px solid transparent !important;
+  border-bottom: 10px solid transparent !important;
+}
