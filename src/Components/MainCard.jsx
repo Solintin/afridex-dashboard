@@ -1,27 +1,27 @@
-import React from 'react';
+import React from "react";
 import afridex_coin from "../assets/images/afridex_coin.svg";
 import Alert from "./Alert";
 
 const MainCard = () => {
-    const [openNotify, setOpenNotify] = React.useState(false);
+  const [openNotify, setOpenNotify] = React.useState(false);
 
-    const copyText = React.useRef("");
-    const handleCopy = () => {
-      navigator.clipboard.writeText(copyText.current.innerHTML).then(
-        function () {
-          setOpenNotify(true);
-        },
-        function () {
-          alert("Copying Failed");
-        }
-      );
-    };
-    const handleCloseNotification = () => {
-        setOpenNotify(false);
-      };
-    return (
-        <div>
-        <div className="flex flex-col rounded-xl my-2   h-full w-420px   ">
+  const copyText = React.useRef("");
+  const handleCopy = () => {
+    navigator.clipboard.writeText(copyText.current.innerHTML).then(
+      function () {
+        setOpenNotify(true);
+      },
+      function () {
+        alert("Copying Failed");
+      }
+    );
+  };
+  const handleCloseNotification = () => {
+    setOpenNotify(false);
+  };
+  return (
+    <div>
+      <div className="flex flex-col rounded-xl my-2   h-full w-full   ">
         <div className="h-3/4 p-6  w-full rounded-t-xl bg-afridex-core  flex justify-between">
           <div className="flex-col space-y-5 text-white">
             <h4 className="font-thin text-base">USCD Wallet</h4>
@@ -35,7 +35,7 @@ const MainCard = () => {
             <img src={afridex_coin} alt="afridex-coin" />
           </div>
         </div>
-        <div className="h-1/4 w-full   px-6 py-2 rounded-b-xl bg-blue-800">
+        <div className="h-full w-full   px-6 py-2 rounded-b-xl bg-blue-800">
           <h2 className="text-white">Wallet Address</h2>
           <div className="flex justify-between">
             <div ref={copyText} className="text-gray-500 text-lg mr-5 truncate">
@@ -60,16 +60,15 @@ const MainCard = () => {
             </div>
           </div>
         </div>
-      </div>  
+      </div>
       <Alert
-      message={"Wallet Address Copied"}
-      type={"success"}
-      open={openNotify}
-      handleCloseNotification={handleCloseNotification}
-    />
-        </div>
-
-    );
+        message={"Wallet Address Copied"}
+        type={"success"}
+        open={openNotify}
+        handleCloseNotification={handleCloseNotification}
+      />
+    </div>
+  );
 };
 
 export default MainCard;

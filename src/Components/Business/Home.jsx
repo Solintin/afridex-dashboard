@@ -86,7 +86,7 @@ const DashboardContent = () => {
         </div>
       </div>
 
-      <div className="my-10 flex flex-col lg:flex-row md:space-x-3 items-stretch cursor-pointer">
+      <div className="my-10 flex flex-col lg:flex-row md:space-x-4 cursor-pointer">
         <div className="max-w-420px">
           <Carousel />
         </div>
