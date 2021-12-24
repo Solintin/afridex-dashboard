@@ -1,5 +1,5 @@
-import "../assets/styles/dashboard.css";
-import afridex_logo from "../assets/images/afridex_logo.svg";
+import "../../assets/styles/dashboard.css";
+import afridex_logo from "../../assets/images/afridex_logo.svg";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import DashboardHome from "../../Components/Personal/Home";
@@ -23,7 +23,7 @@ export default function Dashboard() {
     {
       link: "/dashboard/card",
       icon: "fa fa-credit-card",
-      title: "Card",
+      title: "Cards",
     },
     {
       link: "/dashboard/referral",
@@ -55,7 +55,7 @@ export default function Dashboard() {
     <>
       <div
         onClick={handleToggle}
-        className="menu-toggle md:hidden z-10  border bg-blue-50 rounded-full shadow-lg p-1 absolute -top-1 left-3 mr-5 mt-4"
+        className="menu-toggle md:hidden z-10  border bg-blue-50 rounded-full shadow-lg p-1 absolute -top-2 left-3 mr-5 mt-4"
       >
         <svg
           width="24"

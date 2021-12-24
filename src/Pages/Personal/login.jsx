@@ -1,11 +1,12 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import Login from "../Components/Login";
+import { Route, Routes } from "react-router-dom";
+import Login from "../../Components/Login";
 
 const login = () => {
   return (
     <div>
-      <Route exact path="/Login" component={Login}></Route>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   );
 };
