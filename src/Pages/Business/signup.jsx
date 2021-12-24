@@ -26,7 +26,7 @@ function Signup() {
             Sign up to Afridex
           </h1>
           <span className="mb-3 text-center text-afridex-gray">
-            Please ensure you are visiting the correct url.
+            Please ensure you are visiting the correct Url.
           </span>
           <div className="mb-8  py-2 mx-10  text-center bg-afridex-neutral rounded-3xl font-bold flex  justify-center">
             <span>
